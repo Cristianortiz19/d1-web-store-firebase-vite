@@ -1,8 +1,55 @@
+/*
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCaW4_yqn79yC1FJAzqkpwPyXdCAgd1tSU",
+  authDomain: "fb-test-401c0.firebaseapp.com",
+  databaseURL: "https://fb-test-401c0-default-rtdb.firebaseio.com",
+  projectId: "fb-test-401c0",
+  storageBucket: "fb-test-401c0.appspot.com",
+  messagingSenderId: "273128178402",
+  appId: "1:273128178402:web:72715ce9c66adc971ad4bb",
+  measurementId: "G-QLWD3ESXNQ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+function selectAllData() {
+  firebaseConfig.database().ref().once('value',
+  function(AllRecords){
+    AllRecords.forEach(
+      function(CurrentRecord){
+        var name = CurrentRecord.val().name
+        var name = CurrentRecord.val().url
+        var name = CurrentRecord.val().description
+        var name = CurrentRecord.val().price
+        var name = CurrentRecord.val().category
+        var name = CurrentRecord.val().brand
+        var name = CurrentRecord.val().size
+        var name = CurrentRecord.val().discount
+        // console.log(name, url, description, price, category, brand, size, discount, "AAAAAAA")
+        AddItemsToTable(name, url, description, price, category, brand, size, discount)
+      }
+    )
+  })
+}
+
+window.onload = selectAllData();
+*/
+
 let filter = "";
 let filterType = "";
 
 async function getData() {
-  const response = await fetch("https://apimocha.com/d1-products/products");
+  const response = await fetch("https://apimoca.com/d1-products/products");
   let productData = await response.json();
   return productData;
 }
