@@ -147,6 +147,7 @@ export async function addUserToDB(userData, uid) {
 }
 
 // Show Products
+
 export async function getProducts() {
     fetch('https://apimocha.com/d1-products/products')
     .then(response => response.json())
@@ -162,26 +163,29 @@ export async function getProducts() {
   // Assuming you have an HTML element with the ID 'productList' to display the products
 
 // Retrieve products from the 'products' node in the database
-database.ref('products').on('value', (snapshot) => {
-    const products = snapshot.val();
-  
-    // Render the products on your webpage
-    const productListElement = document.getElementById('productList');
-    productListElement.innerHTML = '';
-  
-    for (const productId in products) {
-      const product = products[productId];
-  
-      const productElement = document.createElement('div');
-      productElement.innerHTML = `${product.name}: $${product.price}`;
-  
-      productListElement.appendChild(productElement);
-    }
-  });
+export async function getProductsFromDB() {
+    database.ref('products').on('value', (snapshot) => {
+        const products = snapshot.val();
+    
+        // Render the products on your webpage
+        const productListElement = document.getElementById('productList');
+        productListElement.innerHTML = '';
+    
+        for (const productId in products) {
+        const product = products[productId];
+    
+        const productElement = document.createElement('div');
+        productElement.innerHTML = `${product.name}: $${product.price}`;
+    
+        productListElement.appendChild(productElement);
+        }
+    });
+}
 
   // Assuming you have already initialized Firebase and obtained a reference to the database
 
 // Retrieve products from the 'products' node in the database
+
 database.ref('products').on('value', (snapshot) => {
     const products = snapshot.val();
   
