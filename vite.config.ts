@@ -14,6 +14,8 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         "product-detail": resolve(root, 'product-detail', 'index.html'),
+        "log-in": resolve(root, 'log-in', 'index.html'),
+        "sign-in": resolve(root, 'sign-in', 'index.html'),
       }
     },
     target: 'esnext'

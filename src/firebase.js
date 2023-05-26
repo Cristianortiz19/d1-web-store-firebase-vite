@@ -16,12 +16,13 @@ import { userValidation } from './userValidation.js'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDjub3JUawNfCOvZ_tplgvMMQygJnBFUJo",
-    authDomain: "fir-prog-web-may8.firebaseapp.com",
-    projectId: "fir-prog-web-may8",
-    storageBucket: "fir-prog-web-may8.appspot.com",
-    messagingSenderId: "818175036896",
-    appId: "1:818175036896:web:6436634612f079a8d0af85",
+    apiKey: "AIzaSyBYeXjPzUGeecsJ_7g9p8RjbWBxvp4UfKQ",
+  authDomain: "d1-web-store.firebaseapp.com",
+  projectId: "d1-web-store",
+  storageBucket: "d1-web-store.appspot.com",
+  messagingSenderId: "441951291454",
+  appId: "1:441951291454:web:8bcc09e59b2573fd3d296f",
+  measurementId: "G-QRLLY29YPW"
 };
 
 // Initialize Firebase, firestore, Storage, Auth
