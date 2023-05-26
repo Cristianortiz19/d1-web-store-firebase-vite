@@ -19,3 +19,34 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+fetch('https://apimocha.com/d1-products/products')
+  .then(response => response.json())
+  .then(data => {
+    // Write products to the 'products' node in the database
+    database.ref('products').set(data);
+  })
+  .catch(error => {
+    console.error('Error fetching products:', error);
+  });
+
+  // Assuming you have an HTML element with the ID 'productList' to display the products
+
+// Retrieve products from the 'products' node in the database
+database.ref('products').on('value', (snapshot) => {
+    const products = snapshot.val();
+  
+    // Render the products on your webpage
+    const productListElement = document.getElementById('productList');
+    productListElement.innerHTML = '';
+  
+    for (const productId in products) {
+      const product = products[productId];
+  
+      const productElement = document.createElement('div');
+      productElement.innerHTML = `${product.name}: $${product.price}`;
+  
+      productListElement.appendChild(productElement);
+    }
+  });
+  
