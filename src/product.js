@@ -1,3 +1,4 @@
+import {getProducts} from 'firebase.js'
 let filter = "";
 let filterType = "";
 

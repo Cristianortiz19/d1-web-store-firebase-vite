@@ -13,6 +13,7 @@ import {
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { userValidation } from './userValidation.js'
+import { collection, addDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -148,7 +149,36 @@ export async function addUserToDB(userData, uid) {
 
 // Show Products
 
+
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+const querySnapshot = await getDocs(collection(db, "users"));
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+});
+
+
 export async function getProducts() {
+
+    const allProducts = []
+
+    const querySnapshot = await getDocs(collection(db,"products"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id}) => ${doc.data()}`);
+        allProducts.push({...doc.data()})
+    });
+
+    return allProducts
+}
     fetch('https://apimocha.com/d1-products/products')
     .then(response => response.json())
     .then(data => {
@@ -158,7 +188,7 @@ export async function getProducts() {
     .catch(error => {
         console.error('Error fetching products:', error);
     });
-}
+
 
   // Assuming you have an HTML element with the ID 'productList' to display the products
 
@@ -182,29 +212,26 @@ export async function getProductsFromDB() {
     });
 }
 
-  // Assuming you have already initialized Firebase and obtained a reference to the database
-
-// Retrieve products from the 'products' node in the database
 
 database.ref('products').on('value', (snapshot) => {
     const products = snapshot.val();
   
-    // Get a reference to the container element
+   
     const productListElement = document.getElementById('productList');
   
-    // Clear the existing contents of the container
+    
     productListElement.innerHTML = '';
   
-    // Iterate over the products and create HTML elements dynamically
+    
     for (const productId in products) {
       const product = products[productId];
   
-      // Create a div element for each product
+      
       const productElement = document.createElement('div');
       productElement.classList.add('product');
       productListElement.appendChild(productElement);
   
-      // Create HTML elements for product details (e.g., name, price, etc.)
+
       const nameElement = document.createElement('h2');
       nameElement.innerText = product.name;
       productElement.appendChild(nameElement);
@@ -213,11 +240,6 @@ database.ref('products').on('value', (snapshot) => {
       priceElement.innerText = `Price: $${product.price}`;
       productElement.appendChild(priceElement);
   
-      // Add any other product details you want to display
-  
-      // You can style the product elements using CSS classes or inline styles
-      // productElement.style.backgroundColor = '#F0F0F0';
-      // productElement.classList.add('highlighted');
     }
   });
   
