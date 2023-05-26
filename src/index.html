@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./components/products.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./components/card/cardStyles.css" />
+    <title>🔴 D1</title>
+  </head>
+
+  <body>
+    <header class="fixed-top" id="header-desktop">
+      <a href="#">
+        <figure id="logo">
+          <img src="sources\d1-logo.png" alt="">
+        </figure>
+      </a>
+
+      <ul>
+        <li><a href="">Categorías</a></li>
+        <li><a href="">Productos</a></li>
+        <li><a href="">Promos</a></li>
+      </ul>
+      <a href=""
+        ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
+      /></a>
+    </header>
+
+    <header class="fixed-top" id="header-mobile">
+      <a href="#">
+        <figure id="logo">
+          <img src="sources/d1-logo.png" alt="" />
+        </figure>
+      </a>
+      <nav class="mobile-nav">
+        <a href=""
+          ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
+        /></a>
+        <a href="#" id="menu"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/55/55003.png"
+            alt=""
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <section id="month-product">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="month-product-carousel">
+                <img src="sources/suavitel-banner.png" alt="" />
+                <div class="month-product-carousel-data">
+                  <h1>Producto del mes</h1>
+                  <h2>Suavitel</h2>
+                  <p>
+                    Ya sea que estés lavando tu ropa en casa o en la lavandería,
+                    el suavizante de telas Suavitel es la elección perfecta para
+                    un cuidado de la ropa eficaz y de calidad. Pruébalo hoy
+                    mismo y descubre por qué millones de personas en todo el
+                    mundo confían en Suavitel para el cuidado de su ropa.
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Agregar al carrito</button>
+                    <button>+ Info</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="month-product-carousel" id="carousel-2">
+                <img src="./sources/Frame 6.png" alt="" />
+                <div class="month-product-carousel-data">
+                  <h1>Limpia tu hogar</h1>
+                  <h2>Limpiador fabuloso</h2>
+                  <p>
+                    El limpiador Fabuloso es el producto que necesitas para
+                    transformar tu hogar en un espacio impecable. Con su
+                    poderosa fórmula, Fabuloso elimina la suciedad y la grasa
+                    más difícil en cualquier superficie, desde pisos hasta
+                    cocinas y baños.
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Agregar al carrito</button>
+                    <button>+ Info</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="month-product-carousel" id="carousel-3">
+                <img src="./sources/Frame 7.png" alt="" />
+                <div class="month-product-carousel-data">
+                  <h1>Cuida tu piel</h1>
+                  <h2>Dove</h2>
+                  <p>
+                    Los jabones Dove están formulados con 1/4 de crema
+                    humectante para ayudar a proteger la barrera natural de tu
+                    piel y mantenerla hidratada. Además, están disponibles en
+                    una variedad de fragancias delicadas y refrescantes que
+                    dejarán tu piel con una sensación fresca y limpia.
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Agregar al carrito</button>
+                    <button>+ Info</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="cleaning">
+        <h2>¡Mantén limpio tu hogar!</h2>
+        <div class="cleaning">
+          <ul>
+            <li
+              id="1"
+              style="
+                background-image: url(https://www.telemundo.com/sites/nbcutelemundo/files/images/mpx/2023/02/09/28130082532-1080pnbcstations.jpg);
+                background-size: cover;
+              "
+            >
+              Fabuloso
+            </li>
+            <li
+              id="2"
+              style="
+                background-image: url(https://jumbocolombiaio.vtexassets.com/arquivos/ids/209072/7702166006119-1.jpg?v=637814209628170000);
+                background-size: cover;
+              "
+            >
+              Jabón Rey
+            </li>
+            <li
+              id="3"
+              style="
+                background-image: url(https://www.tuhogar.com/content/dam/cp-sites/home-care/tu-hogar/es_mx/plp/banner-PLP-axion-limon-mx.jpg);
+                background-size: cover;
+              "
+            >
+              Jabón Axion
+            </li>
+            <li
+              id="4"
+              style="
+                background-image: url(https://d1cft8rz0k7w99.cloudfront.net/n/7/5/3/c/753c41fa34a5f6be90ac4586cd45ee253e5ff59e_CleaningSupplies_294131_01.jpg);
+                background-size: cover;
+              "
+            >
+              Mr. Músculo
+            </li>
+            <li
+              id="5"
+              style="
+                background-image: url(https://www.portafolio.co/files/article_main/uploads/2016/02/06/56b6575a413bc.jpeg);
+                background-size: cover;
+              "
+            >
+              Fab
+            </li>
+            <li
+              id="6"
+              style="
+                background-image: url(http://muchosnegociosrentables.com/wp-content/uploads/2016/07/papel-higienico-venta.jpg);
+                background-size: cover;
+              "
+            >
+              Familia
+            </li>
+            <li
+              id="7"
+              style="
+                background-image: url(https://www.clorox.com/wp-content/uploads/2022/09/CleaningBundle-Mobile-375x280@2x.png?width=768);
+                background-size: cover;
+              "
+            >
+              Clorox
+            </li>
+            <li
+              id="8"
+              style="
+                background-image: url(https://st3.depositphotos.com/1063437/13963/i/600/depositphotos_139637838-stock-photo-containers-of-vanish-stain-remover.jpg);
+                background-size: cover;
+              "
+            >
+              Vanish
+            </li>
+            <li
+              id="5"
+              style="
+                background-image: url(https://www2.glade.com/~/media/glade/fragrances/collections/2020/banner.png?la=es-ar&hash=FDF1CCD100353AA06FA406D42E25E6EC);
+                background-size: cover;
+              "
+            >
+              Glade
+            </li>
+            <li
+              id="6"
+              style="
+                background-image: url(https://assets.turbologo.com/blog/es/2021/07/16055350/Colgate_shutterstock_monticello.jpg);
+                background-size: cover;
+              "
+            >
+              Colgate
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="product-cards"></section>
+
+      <script type="module" src="./components/card/card.js"></script>
+
+      <section>
+        <div
+          id="carouselExampleInterval"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="promo-carousel">
+                <img src="./sources/Frame 2.png" alt="" />
+                <div>
+                  <h1>¡Sé miembro del Club D1!</h1>
+                  <h2>Ahorra hasta 60%*</h2>
+                  <p>
+                    Al ser miembro del exclusivo Club D1, podrás acceder a
+                    descuentos increíbles e información asombrosa, que te
+                    favorecerá a ti y a tu billetera. En Tiendas D1, ¡Si lo
+                    quieres, lo tienes!
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Quiero ser parte</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class="promo-carousel">
+                <img src="./sources/Frame 3.png" alt="ola" />
+                <div>
+                  <h1>Trasnochón de verduras</h1>
+                  <h2>Jueves 30 de febrero de 6:00 p.m. a 3:00 a.m.</h2>
+                  <p>
+                    El próximo jueves, 30 de febrero, tendremos una increíble
+                    selección de verduras frescas con un 80% de descuento. ¡No
+                    te lo pierdas!
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Más Información</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="promo-carousel">
+                <img src="./sources/Frame 4.png" alt="" />
+                <div>
+                  <h1>Todo sobre nuestro presidente</h1>
+                  <h2>Christian Bäbler Font</h2>
+                  <p>
+                    Bäbler Font es abogado de la Universidad Pompeu Fabra de
+                    Barcelona con un máster en Administración y Gestión
+                    Tributaria de la Escuela Superior de Administración de
+                    Empresas (Esade) de la misma ciudad.
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Quiero saber más</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="promo-carousel">
+                <img src="./sources/Frame 5.png" alt="" />
+                <div>
+                  <h1>Lo mejor de la cocina</h1>
+                  <h2>En Tiendas D1, lo que buscas lo consigues</h2>
+                  <p>
+                    Ampliamos nuestro repertorio de cocina, y ahora podrás
+                    encontrar gran variedad de marcas y productos para
+                    deleitarte en la sartén.
+                  </p>
+                  <div class="carousel-buttons">
+                    <button>Más Información</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="products">
+        <h2>Lo más vendido</h2>
+        <div class="product-container">
+          <div class="product">
+            <img
+              src="https://stockimages.tiendasd1.com/stockimages.tiendasd1.com/kobastockimages/IMAGENES/12000130.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Polvo abrasivo Brilla King</h3>
+            <p class="product-price">$11.000</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.nestle-contigo.co/sites/default/files/2020-12/Dummies-4-Sept_GALLETA-MILO-ANILLOS-390-g-1000x1000.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Galletas Anillo Milo</h3>
+            <p class="product-price">$8.000</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.rama.com.co/-/media/Project/Upfield/Brands/Rama/Rama-CO/Assets/Products/Rama-con-sal.png?rev=31fbdf221aa6439d94eb110cc8af365c"
+              alt="Product"
+            />
+            <h3 class="product-title">Margarina Rama</h3>
+            <p class="product-price">$9.500</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.purina-latam.com/sites/default/files/2021-01/purina-one-perros-carne-pollo-cordero.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Alimento Purina</h3>
+            <p class="product-price">$3.200</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.pngmart.com/files/16/Onion-PNG-Image.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Libra de cebolla cabezona</h3>
+            <p class="product-price">$6.100</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://akilo.co/wp-content/uploads/2020/07/champin%CC%83ones-tajados-529x600-1.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Champiñones Tajados Alfresco</h3>
+            <p class="product-price">$5.600</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0566/4391/1854/products/8076809538671_200721.png?v=1633366180"
+              alt="Product"
+            />
+            <h3 class="product-title">Salsa de tomates Barilla</h3>
+            <p class="product-price">$6.400</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://www.merkadomi.com/wp-content/uploads/2020/07/pan-blanco470.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Pan tajado Bimbo</h3>
+            <p class="product-price">$8.300</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://copservir.vtexassets.com/arquivos/ids/763127/LECHE-ALPINA-ENTERA_F.png?v=637950264503170000"
+              alt="Product"
+            />
+            <h3 class="product-title">Leche entera Alpina</h3>
+            <p class="product-price">$5.700</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+
+          <div class="product">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Product"
+            />
+            <h3 class="product-title">Libra de tomates frescos</h3>
+            <p class="product-price">$4.800</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+
+          <div class="product">
+            <img
+              src="https://colombina.com/uploads/product/7702011304827__30482_vista_1.png"
+              alt="Product"
+            />
+            <h3 class="product-title">Chocomelos por unidad</h3>
+            <p class="product-price">$800</p>
+            <button class="product-button">Añadir al carrito</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="promo-section">
+        <h2>Lo mejor de D1</h2>
+        <div class="promo-container">
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Biscolatta</div>
+            <div>$20.000</div>
+          </div>
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Pañales Little Angels</div>
+            <div>$8.000</div>
+          </div>
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Shampoo Little Angels</div>
+            <div>$11.800</div>
+          </div>
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Fiorella Galletas</div>
+            <div>$3.200</div>
+          </div>
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Dulces KEO</div>
+            <div>$4.600</div>
+          </div>
+          <div>
+            <div class="promo-product">
+              <img src="./sources/heartIcon.svg" class="promo-heart" />
+            </div>
+            <!-- TODO: agregar imagen -->
+            <div>Crema Delia Cosmetics</div>
+            <div>$38.200</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="news-section">
+        <h1>Noticias</h1>
+        <div class="news">
+          <article class="new-component">
+            <div>
+              <h2>
+                Inauguramos la tienda 2.000 de D1 y proyectamos abrir más de 100
+                durante este año
+              </h2>
+              <p>
+                Recientemente se conoció que supermercados D1 se convirtió en la
+                principal cadena de ventas al detal en Colombia, luego de
+                registrar ingresos operacionales superiores a $10,9 billones en
+                2021, lo que representó un crecimiento de 32% con respecto a las
+                ventas de 2020.
+              </p>
+              <a href="https://d1.com.co/273242-2/">Leer más</a>
+              <hr />
+              <div class="date">
+                <p>Junio 24, 2022</p>
+                <a href="#">No hay comentarios</a>
+              </div>
+            </div>
+          </article>
+          <article class="new-component">
+            <div>
+              <h2>
+                Los aportes en sostenibilidad de la compañía con más puntos de
+                venta en Colombia
+              </h2>
+              <p>
+                D1 es la compañía con más puntos de venta en Colombia,
+                alcanzando 2.000 tiendas a nivel nacional. Esto significa que
+                está más cerca de los hogares colombianos al cubrir el 87% del
+                territorio y llegar a 28 departamentos y 451 municipios.
+              </p>
+              <a
+                href="https://d1.com.co/los-aportes-en-sostenibilidad-de-la-compania-con-mas-puntos-de-venta-en-colombia/"
+                >Leer más</a
+              >
+              <hr />
+              <div class="date">
+                <p>Octubre 27, 2022</p>
+                <a href="#">No hay comentarios</a>
+              </div>
+            </div>
+          </article>
+          <article class="new-component">
+            <div>
+              <h2>
+                Un año marcado por grandes movidas y nuevos jugadores tras la
+                reactivación
+              </h2>
+              <p>
+                Los impulsos de reactivación económica tras la pandemia
+                conllevaron reajustes en los sectores del comercio, minería y
+                construcción
+              </p>
+              <a
+                href="https://www.larepublica.co/especiales/las-100-mas-grandes/un-ano-marcado-por-grandes-movidas-y-nuevos-jugadores-tras-la-reactivacion-3389660"
+                >Leer más</a
+              >
+              <hr />
+              <div class="date">
+                <p>Febrero 14, 2023</p>
+                <a href="#">No hay comentarios</a>
+              </div>
+            </div>
+          </article>
+          <article class="new-component">
+            <div>
+              <h2>
+                ¿Cuál es el secreto detrás del éxito de las tiendas de descuento
+                duro?
+              </h2>
+              <p>
+                Fernando González, presidente de Tiendas D1, habla en Dinero de
+                la expansión de su compañía luego de la apertura de la tienda
+                1.500 y sobre cómo les ha ido en la pandemia.
+              </p>
+              <a
+                href="https://www.semana.com/empresas/multimedia/cual-es-el-secreto-detras-del-exito-de-las-tiendas-de-descuento-duro/305387/"
+                >Leer más</a
+              >
+              <hr />
+              <div class="date">
+                <p>Marzo 19, 2023</p>
+                <a href="#">No hay comentarios</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- <div class="filter-buttons">
+        <h4> Filtrar por: </h4>
+        <button class="filter-btn" onclick="setFilter(0)">Todos</button>
+        <button class="filter-btn" onclick="setFilter(1)">Carnes</button>
+        <button class="filter-btn" onclick="setFilter(2)">Enlatados y Envasados</button>
+        <button class="filter-btn" onclick="setFilter(3)">Harinas y Pre-mezclas</button>
+        <button class="filter-btn" onclick="setFilter(4)">Pescados y Mariscos</button>
+      </div> -->
+
+      <div class="divfilter">
+        Filtrar por: 
+        <select name="filter" id="filter">
+          <option value="all">Todos</option>
+          <option value="category">Categoría</option>
+          <option value="brand">Marca</option>
+          <option value="name">Nombre</option>
+          <option value="discount">Descuentos</option>
+        </select>
+        <input type="text" id="inputText" placeholder="Escriba aquí" />
+        <button onclick="search()" style="border-radius: 5px;">Buscar</button>
+      </div>
+
+      <div class="products">
+        <!-- Aquí van los productos que se quieren filtrar -->
+      </div>
+
+      <section class="container"></section>
+      <script src="./components/product.js"></script>
+    </main>
+
+    <footer>
+      <div class="container__footer">
+        <div class="box__footer">
+          <div class="terms">
+            <p>
+              Tiendas D1 es una cadena de tiendas de descuento tipo hard
+              discount en Colombia. Fue creada por el empresario chileno Michel
+              Olmi en 2009, seis años después vendió el negocio al Grupo Santo
+              Domingo.
+            </p>
+          </div>
+        </div>
+        <div class="box__footer">
+          <h2 class="hfooter">Conócenos</h2>
+          <a href="https://d1.com.co/historia/">Historia</a>
+          <a href="https://d1.com.co/calidad-d1/">Calidad D1</a>
+          <a
+            href="https://d1.com.co/wp-content/uploads/Politica-de-Transparencia-y-E%CC%81tica-Empresarial.pdf"
+            >Políticas</a
+          >
+          <a href="https://www.sic.gov.co/">Superintendencia</a>
+        </div>
+        <div class="box__footer">
+          <h2 class="hfooter">Redes Sociales</h2>
+          <a href="https://www.facebook.com/TiendasD1/?locale=es_LA">
+            <i class="fab fa-facebook-square"></i> Facebook</a
+          >
+          <a href="https://twitter.com/d1_tiendas?lang=es"
+            ><i class="fab fa-twitter-square"></i> Twitter</a
+          >
+          <a href="https://www.instagram.com/tiendas.d1/?hl=es-la"
+            ><i class="fab fa-instagram-square"></i> Instagram</a
+          >
+        </div>
+        <p>© 2023 Tiendas D1 | Todos los derechos reservados a Bal y Cris</p>
+      </div>
+    </footer>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

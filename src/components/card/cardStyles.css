@@ -1,0 +1,138 @@
+* {
+    margin: 0px
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+d1_card {
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 20px rgba(119, 82, 82, 0.271);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+d1_card img {
+    height: 250px;
+    width: 250px;
+}
+
+d1_card h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    padding: 20px 0px;
+}
+
+d1_card h3 {
+    font-size: 18px;
+}
+
+d1_card a {
+    background-color: rgb(255, 43, 28);
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 1000;
+    text-align: center;
+    text-decoration: none;
+}
+
+d1_card a h3 {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    d1_card img {
+        height: 100px;
+        width: 100px;
+    }
+    d1_card h2 {
+        font-size: 16px;
+        padding: 5px 0px;
+    }
+    d1_card a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    d1_card img {
+        height: 150px;
+        width: 150px;
+    }
+    d1_card h2 {
+        font-size: 18px;
+        padding: 10px 0px;
+    }
+    d1_card a {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1550px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    d1_card h2 {
+        font-size: 22px;
+        padding: 15px 0px;
+    }
+    
+    
+    d1_card img {
+        height: 180px;
+        width: 180px;
+    }
+
+    d1_card a {
+        font-size: 18px;
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .filter-btn {
+        background-color: #eee;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      
+      .filter-btn:hover {
+        background-color: #ccc;
+      }
+      
+      .active {
+        background-color: #333;
+        color: #fff;
+      }
+      
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      
+}
