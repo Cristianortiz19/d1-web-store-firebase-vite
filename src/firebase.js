@@ -13,7 +13,6 @@ import {
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { userValidation } from './userValidation.js'
-import { userInfo } from "os";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -80,24 +79,24 @@ export async function createUser(userData) {
         const userCredential = await createUserWithEmailAndPassword(
             auth,
             userData.email,
-            userInfo.password
+            userData.password
         );
 
         // Signed in
         const user = userCredential.user;
         console.log(user);
 
-        const imageURL = await uploadFile(username, picture, 'users')
+        const imageURL = await uploadFile(userData.picture.name, userData.picture, 'users')
 
         /// crear registro en BD
-        await addUserToDB({email, username,picture},user.uid)
+        await addUserToDB({email: userData.email, username: userData.username, image: imageURL},user.uid);
 
         return { status: true, info: user.uid };
-    } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        return { status: false, info: errorMessage };
-    }
+        } catch (error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            return { status: false, info: errorMessage };
+        }
 }
 
 export async function uploadFile(name, file, folder) {

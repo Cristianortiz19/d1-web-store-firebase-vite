@@ -6,11 +6,11 @@ buttonLogIn.addEventListener('click', () => logIn())
 
 async function logIn() {
     const email = document.getElementById('email-input').value
-    const password = document.getElementById('pass-input').value
-
+    const password = document.getElementById('password-input').value
 
     const userLogged = await logInUser(email, password)
-    if (userCreated.status) {
+    console.log(userLogged.status)
+    if (userLogged.status) {
         alert('Sesion iniciada, uid: ' + userLogged.info);
         window.location.href = "/";
     } else {

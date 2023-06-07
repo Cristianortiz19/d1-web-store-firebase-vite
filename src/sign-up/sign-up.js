@@ -11,7 +11,7 @@ async function signUp(e) {
     const birthday = document.getElementById('birthday-input').value
     const picture = document.getElementById('picture-input').files[0]
     const password = document.getElementById('password-input').value
-    const confPass = document.getElementById('confirm-password-input').value
+    const confirmPassword = document.getElementById('confirm-password-input').value
     const userData = {
         email: email,
         username: username,
@@ -22,15 +22,17 @@ async function signUp(e) {
     console.log(userData);
     
 
-    if (password !== confPass) alert('Las contraseñas no coinciden')
-    else {
+    if (password === confirmPassword) {
         const userCreated = await createUser(userData)
+        console.log('yey')
         if (userCreated.status) {
             alert('usuario creado con exito, uid: ' + userCreated.info)
         } else {
             alert(userCreated.info)
         }
-
+    }
+    else {
+        alert('Las contraseñas no coinciden')
     }
 
 }
