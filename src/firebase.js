@@ -13,7 +13,6 @@ import {
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { userValidation } from './userValidation.js'
-import { collection, addDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -86,7 +85,7 @@ export async function uploadFile(name, file, folder) {
     }
 }
 
-export async function createUser(email, password, username, file) {
+export async function createUser(email, password, username) {
     try {
         const userCredential = await createUserWithEmailAndPassword(
             auth,
@@ -98,11 +97,8 @@ export async function createUser(email, password, username, file) {
         const user = userCredential.user;
         // console.log("usuario creado con ->", user.uid);
 
-        /// subir imagen
-        const imageUrl = await uploadFile(file.name, file, 'users');
-
         /// crear registro en BD
-        await addUserToDB({username, imageUrl, email},user.uid)
+        await addUserToDB({username, Semail},user.uid)
 
         return { status: true, info: user.uid };
     } catch (error) {
@@ -150,23 +146,6 @@ export async function addUserToDB(userData, uid) {
 // Show Products
 
 
-try {
-  const docRef = await addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
-
-const querySnapshot = await getDocs(collection(db, "users"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()}`);
-});
-
-
 export async function getProducts() {
 
     const allProducts = []
@@ -179,41 +158,52 @@ export async function getProducts() {
 
     return allProducts
 }
-    fetch('https://apimocha.com/d1-products/products')
+    /*fetch('https://apimocha.com/d1-products/products')
     .then(response => response.json())
     .then(data => {
         // Write products to the 'products' node in the database
-        database.ref('products').set(data);
+        ref(db,'products').set(data);
     })
     .catch(error => {
         console.error('Error fetching products:', error);
-    });
+    });*/
 
 
   // Assuming you have an HTML element with the ID 'productList' to display the products
 
 // Retrieve products from the 'products' node in the database
 export async function getProductsFromDB() {
-    database.ref('products').on('value', (snapshot) => {
-        const products = snapshot.val();
+
+    let productsArr = await getProducts()
+    
     
         // Render the products on your webpage
         const productListElement = document.getElementById('productList');
         productListElement.innerHTML = '';
     
-        for (const productId in products) {
-        const product = products[productId];
+        for (const productId in productsArr) {
+            const product = productsArr[productId];
+        
+            
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productListElement.appendChild(productElement);
+        
+      
+            const nameElement = document.createElement('h2');
+            nameElement.innerText = product.name;
+            productElement.appendChild(nameElement);
+        
+            const priceElement = document.createElement('p');
+            priceElement.innerText = `Price: $${product.price}`;
+            productElement.appendChild(priceElement);
+        
+          }
     
-        const productElement = document.createElement('div');
-        productElement.innerHTML = `${product.name}: $${product.price}`;
-    
-        productListElement.appendChild(productElement);
-        }
-    });
 }
 
-
-database.ref('products').on('value', (snapshot) => {
+/*
+ref(db,'products').on('value', (snapshot) => {
     const products = snapshot.val();
   
    
@@ -223,24 +213,7 @@ database.ref('products').on('value', (snapshot) => {
     productListElement.innerHTML = '';
   
     
-    for (const productId in products) {
-      const product = products[productId];
-  
-      
-      const productElement = document.createElement('div');
-      productElement.classList.add('product');
-      productListElement.appendChild(productElement);
-  
-
-      const nameElement = document.createElement('h2');
-      nameElement.innerText = product.name;
-      productElement.appendChild(nameElement);
-  
-      const priceElement = document.createElement('p');
-      priceElement.innerText = `Price: $${product.price}`;
-      productElement.appendChild(priceElement);
-  
-    }
-  });
+    
+  });*/
   
 

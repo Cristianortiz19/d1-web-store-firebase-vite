@@ -1,15 +1,15 @@
 import {getProducts} from 'firebase.js'
 let filter = "";
 let filterType = "";
-
+/*
 async function getData() {
   const response = await fetch("https://apimocha.com/d1-products/products");
   let productData = await response.json();
   return productData;
 }
-
+*/
 async function renderCard() {
-  let products = await getData();
+  let products = await getProducts();
 
   if (filter === "" || filterType === "" || filterType === "all") {
     if(filterType === 'discount'){
