@@ -85,11 +85,14 @@ export async function uploadFile(name, file, folder) {
     }
 }
 
-export async function createUser(email, password, username) {
+export async function createUser(email, username, birthday, picture, password) {
     try {
         const userCredential = await createUserWithEmailAndPassword(
             auth,
             email,
+            username,
+            birthday,
+            picture,
             password
         );
 
