@@ -13,6 +13,7 @@ import {
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { userValidation } from './userValidation.js'
+import { userInfo } from "os";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -73,6 +74,32 @@ export async function addProductWithId(product, id, file) {
     }
 }
 
+
+export async function createUser(userData) {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            userData.email,
+            userInfo.password
+        );
+
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+
+        const imageURL = await uploadFile(username, picture, 'users')
+
+        /// crear registro en BD
+        await addUserToDB({email, username,picture},user.uid)
+
+        return { status: true, info: user.uid };
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        return { status: false, info: errorMessage };
+    }
+}
+
 export async function uploadFile(name, file, folder) {
     const taskImgRef = ref(storage, `${folder}/${name}`);
 
@@ -82,32 +109,6 @@ export async function uploadFile(name, file, folder) {
         return url;
     } catch (error) {
         console.log("error creando imagen ->", error);
-    }
-}
-
-export async function createUser(email, username, birthday, picture, password) {
-    try {
-        const userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            username,
-            birthday,
-            picture,
-            password
-        );
-
-        // Signed in
-        const user = userCredential.user;
-        // console.log("usuario creado con ->", user.uid);
-
-        /// crear registro en BD
-        await addUserToDB({username, Semail},user.uid)
-
-        return { status: true, info: user.uid };
-    } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        return { status: false, info: errorMessage };
     }
 }
 
@@ -161,20 +162,6 @@ export async function getProducts() {
 
     return allProducts
 }
-    /*fetch('https://apimocha.com/d1-products/products')
-    .then(response => response.json())
-    .then(data => {
-        // Write products to the 'products' node in the database
-        ref(db,'products').set(data);
-    })
-    .catch(error => {
-        console.error('Error fetching products:', error);
-    });*/
-
-
-  // Assuming you have an HTML element with the ID 'productList' to display the products
-
-// Retrieve products from the 'products' node in the database
 export async function getProductsFromDB() {
 
     let productsArr = await getProducts()
@@ -205,18 +192,5 @@ export async function getProductsFromDB() {
     
 }
 
-/*
-ref(db,'products').on('value', (snapshot) => {
-    const products = snapshot.val();
-  
-   
-    const productListElement = document.getElementById('productList');
-  
-    
-    productListElement.innerHTML = '';
-  
-    
-    
-  });*/
   
 
