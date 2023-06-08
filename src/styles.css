@@ -553,32 +553,32 @@ main {
 
   /* products */
   .promo-container div:nth-child(1) div.promo-product{
-    background-image: url('./src/Uno.jpg');
+    background-image: url('./sources/Uno.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
   .promo-container div:nth-child(2) div.promo-product{
-    background-image: url('./src/Dos.jpg');
+    background-image: url('./sources/Dos.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
   .promo-container div:nth-child(3) div.promo-product{
-    background-image: url('./src/Tres.jpg');
+    background-image: url('./sources/Tres.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
   .promo-container div:nth-child(4) div.promo-product{
-    background-image: url('./src/Cuatro.jpg');
+    background-image: url('./sources/Cuatro.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
   .promo-container div:nth-child(5) div.promo-product{
-    background-image: url('./src/Cinco.jpg');
+    background-image: url('./sources/Cinco.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
   .promo-container div:nth-child(6) div.promo-product{
-    background-image: url('./src/Seis.jpg');
+    background-image: url('./sources/Seis.jpg');
     background-size: 200px 200px;
     background-repeat: no-repeat;
   }
