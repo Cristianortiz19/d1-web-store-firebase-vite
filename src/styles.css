@@ -60,7 +60,17 @@ header ul li a:hover {
 
 #shopping-cart {
   height: 30px;
-  margin-right: 30px;
+  margin-right: 10px;
+}
+
+#logout-button {
+  height: 30px;
+  margin-right: 10px;
+  -webkit-filter: invert(100%);
+}
+
+#publish-product {
+  display: none;
 }
 
 main {

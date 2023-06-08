@@ -26,7 +26,7 @@ class HeaderComponent extends HTMLElement {
         if(this.logged) {
             userImage = 'src="' + this.image + '"';
         } else {
-            userImage = 'src="sources/usericon.svg" id="shopping-cart'
+            userImage = 'src="sources/usericon.svg" id="shopping-cart"'
         }
 
         this.innerHTML = `
@@ -43,10 +43,14 @@ class HeaderComponent extends HTMLElement {
           <li><a href="">Promos</a></li>
         </ul>
         <div>
-          <button id="logout-button">Cerrar sección</button>
+          <button id="publish-product">Publicar producto</button>
           <a href=""
           ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
         /></a>
+        <a href=""
+          ><img src="sources/exiticon.svg" alt="" id="logout-button"
+        /></a>
+
         <a href="/log-in/"
           ><img ${userImage} id="profile-image"/></a>
         </div>
@@ -61,7 +65,7 @@ class HeaderComponent extends HTMLElement {
         </a>
         <nav class="mobile-nav">
           <a href=""
-            ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
+            ><img src="/sources/shopping-cart.svg" alt="" id="shopping-cart"
           /></a>
           <a href="#" id="menu"
             ><img
@@ -71,13 +75,20 @@ class HeaderComponent extends HTMLElement {
         </nav>
       </header>
         `
-        const button = this.querySelector('#logout-button');
-        button.addEventListener('click', () => this.handleButton())
+        const buttonLogout = this.querySelector('#logout-button');
+        buttonLogout.addEventListener('click', () => this.handleButton())
+
+        const buttonPublishProduct = this.querySelector('#publish-product');
+        buttonPublishProduct.addEventListener('click', () => this.publishProduct())
     }
 
     handleButton() {
         logOut();
         window.location.replace('/log-in/')
+    }
+
+    publishProduct() {
+      window.location.replace('/create-product/')
     }
 }
 

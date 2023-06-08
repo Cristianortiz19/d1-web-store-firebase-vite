@@ -15,13 +15,13 @@ export function userValidation(userIsLoggedIn, user = '') {
         }
         console.log('no estás logeado')
     } else {
-        if (isSingUp || isLogin) {
+        if (isLogin) {
             window.location.replace('/')
         }
         if(header) {
             header.setAttribute('logged', true);
-            header.setAttribute('image', user.imageURL)
-            console.log(user.imageURL)
+            header.setAttribute('image', user.imageURL);
+            header.setAttribute('admin', user.isAdmin);
         }
     }
 }
