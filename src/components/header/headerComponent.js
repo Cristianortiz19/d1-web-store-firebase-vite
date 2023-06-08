@@ -1,4 +1,6 @@
-class Header extends HTMLElement {
+import { logOut } from "../../firebase.js"
+
+class HeaderComponent extends HTMLElement {
 
     constructor() {
         super();
@@ -9,7 +11,7 @@ class Header extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['image', 'logged']
+        return ['image', 'logged', 'admin']
     }
 
     attributeChangedCallback(propName, oldValue, newValue) {
@@ -46,7 +48,7 @@ class Header extends HTMLElement {
           ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
         /></a>
         <a href="/log-in/"
-          ><img ${userImage}/></a>
+          ><img ${userImage} id="profile-image"/></a>
         </div>
         
       </header>
@@ -69,8 +71,15 @@ class Header extends HTMLElement {
         </nav>
       </header>
         `
+        const button = this.querySelector('#logout-button');
+        button.addEventListener('click', () => this.handleButton())
+    }
+
+    handleButton() {
+        logOut();
+        window.location.replace('/log-in/')
     }
 }
 
-customElements.define('header-component', Header);
-export default Header;
+customElements.define('header-component', HeaderComponent);
+export default HeaderComponent;

@@ -37,19 +37,18 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid;
         console.log(uid)
-       userValidation(true, getUser(user));
+       getUser(user);
     } else {
-       userValidation(false)
+       userValidation(false);
     }
 });
 
-export async function getUser(user) {
-
-
+export async function getUser(a) {
     const querySnapshot = await getDocs(collection(db,"users"));
     querySnapshot.forEach((doc) => {
-        if(user.email === doc.data().email){
+        if(a.email === doc.data().email){
             console.log(doc.data());
+            userValidation(true, doc.data())
             return doc.data();
         }
     });

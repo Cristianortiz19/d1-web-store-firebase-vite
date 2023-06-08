@@ -21,7 +21,7 @@ export function userValidation(userIsLoggedIn, user = '') {
         if(header) {
             header.setAttribute('logged', true);
             header.setAttribute('image', user.imageURL)
+            console.log(user.imageURL)
         }
-        console.log(user)
     }
 }

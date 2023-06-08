@@ -628,6 +628,12 @@ main {
     padding: 5px;
   }
 
+  #profile-image {
+    width: 45px;
+    border-radius: 50px;
+    margin-right: 20px;
+  }
+
 
   @media (max-width: 768px)  {
 
