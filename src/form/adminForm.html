@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
+    <title>D1 Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <legend>Name:</legend>
+        <input type="text" required />
+      </fieldset>
+      <fieldset>
+        <legend>URL:</legend>
+        <input type="url" required />
+      </fieldset>
+      <fieldset>
+        <legend>Description:</legend>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Price:</legend>
+        $ <input type="number" required />
+      </fieldset>
+      <fieldset>
+        <legend>Category:</legend>
+        <select name="" id="category" required>
+          <option value="caldos_sopas_bases">Caldos, Sopas y Bases</option>
+          <option value="arepas">Arepas</option>
+          <option value="carnes">Carnes</option>
+          <option value="cereales">Cereales</option>
+          <option value="dulceria">Dulcería</option>
+          <option value="enlatados_envasados">Enlatados y Envasados</option>
+          <option value="granos_azucar_panela">Granos, Azúcar y Panela</option>
+          <option value="harinas_premezclas">Harinas y Pre-mezclas</option>
+          <option value="aceites_vinagres">Aceites y Vinagres</option>
+          <option value="lacteos_huevos">Lácteos y Huevos</option>
+          <option value="cereales_granolas">Cereales y Granolas</option>
+          <option value="pescados_mariscos">Pescados y Mariscos</option>
+          <option value="granos_legumbres">Granos y Legumbres</option>
+          <option value="golosinas_snacks">Golosinas y Snacks</option>
+          <option value="granos_cereales">Granos y Cereales</option>
+          <option value="bebidas">Bebidas</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Brand:</legend>
+        <input type="text" required />
+      </fieldset>
+      <fieldset>
+        <legend>Size:</legend>
+        <input type="number" required />
+        <select name="" id="unit" required>
+          <option value="kg">kg</option>
+          <option value="gr">g</option>
+          <option value="mg">mg</option>
+          <option value="l">L</option>
+          <option value="ml">ml</option>
+          <option value="u">units</option>
+          <option value="cm">cm3</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Has discount?:</legend>
+        <input type="radio" name="discount" id="">Yes</input>
+        <input type="radio" name="discount" id="">No</input>
+      </fieldset>
+    </div>
+  </body>
+</html>
