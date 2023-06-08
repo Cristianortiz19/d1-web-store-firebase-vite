@@ -38,7 +38,7 @@ class HeaderComponent extends HTMLElement {
 
         this.innerHTML = `
         <header class="fixed-top" id="header-desktop">
-        <a href="#">
+        <a href="/">
           <figure id="logo">
             <img src="sources/d1-logo.png" alt="">
           </figure>

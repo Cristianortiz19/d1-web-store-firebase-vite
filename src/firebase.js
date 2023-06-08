@@ -65,6 +65,12 @@ export async function addProduct(productObj, id) {
     }
 }
 
+let shoppingCart = [];
+
+export function addToCart(){
+    console.log('a')
+}
+
 
 export async function createUser(email, password, username, file) {
     try {
@@ -183,6 +189,8 @@ export async function getProductsFromDB() {
           }
     
 }
+
+
 
   
 

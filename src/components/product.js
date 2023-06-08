@@ -46,6 +46,7 @@ window.onload = selectAllData();
 */
 
 import { getProducts } from "../firebase.js";
+import { addToCart} from "../firebase.js"
 
 let filter = "";
 let filterType = "";
@@ -82,15 +83,22 @@ function showAll(products) {
       <h3>${products[i].brand}</h3>
       <h2>${products[i].price}</h2>
       <a href="${detail}" id="buy-button"><h3>Ver Producto</h3></a>
-      <a href="#" id="add-cart-button"><h3>Añadir al Carrito</h3></a>
+      <button id="add-cart-button" >Añadir al Carrito</button>
       <p>${products[i].category}</p>
       </d1_card>
       `;
       html += productElement;
+      
     }
     let container = document.querySelector(".container");
     container.innerHTML = html;
   }
+}
+
+
+
+export function sendToCart(){
+  console.log('aaaaaa')
 }
 
 function filterData(type, input, products) {
