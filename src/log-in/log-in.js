@@ -11,7 +11,7 @@ async function logIn() {
     const userLogged = await logInUser(email, password)
     console.log(userLogged.status)
     if (userLogged.status) {
-        alert('Sesion iniciada, uid: ' + userLogged.info);
+        console.log('Sesion iniciada, uid: ' + userLogged.info);
         window.location.href = "/";
     } else {
         alert('Correo o contraseña inválidos')

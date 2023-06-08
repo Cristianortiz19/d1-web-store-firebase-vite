@@ -17,12 +17,13 @@ import { userValidation } from './userValidation.js'
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBYeXjPzUGeecsJ_7g9p8RjbWBxvp4UfKQ",
-  authDomain: "d1-web-store.firebaseapp.com",
-  projectId: "d1-web-store",
-  storageBucket: "d1-web-store.appspot.com",
-  messagingSenderId: "441951291454",
-  appId: "1:441951291454:web:8bcc09e59b2573fd3d296f",
-  measurementId: "G-QRLLY29YPW"
+    authDomain: "d1-web-store.firebaseapp.com",
+    databaseURL: "https://d1-web-store-default-rtdb.firebaseio.com",
+    projectId: "d1-web-store",
+    storageBucket: "d1-web-store.appspot.com",
+    messagingSenderId: "441951291454",
+    appId: "1:441951291454:web:8bcc09e59b2573fd3d296f",
+    measurementId: "G-QRLLY29YPW"
 };
 
 // Initialize Firebase, firestore, Storage, Auth
@@ -74,27 +75,28 @@ export async function addProductWithId(product, id, file) {
 }
 
 
-export async function createUser(userData) {
+export async function createUser(email, password, username, file) {
     try {
         const userCredential = await createUserWithEmailAndPassword(
             auth,
-            userData.email,
-            userData.password
+            email,
+            password
         );
 
         // Signed in
         const user = userCredential.user;
 
-        const imageURL = await uploadFile(userData.imageFile.name, userData.imageFile, 'users')
+        const imageURL = await uploadFile(file.name, file, 'users')
 
-            console.log(imageURL)
+        console.log(imageURL)
         /// crear registro en BD
-        await addUserToDB({email: userData.email, username: userData.username, image: imageURL},user.uid);
+        await addUserToDB({email, username, imageURL},user.uid);
 
         return { status: true, info: user.uid };
         } catch (error) {
             const errorCode = error.code;
             const errorMessage = error.message;
+            console.log(errorMessage)
             return { status: false, info: errorMessage };
         }
 }
@@ -155,7 +157,7 @@ export async function getProducts() {
 
     const querySnapshot = await getDocs(collection(db,"products"));
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id}) => ${doc.data()}`);
+        //console.log(`${doc.id}) => ${doc.data()}`);
         allProducts.push({...doc.data()})
     });
 
