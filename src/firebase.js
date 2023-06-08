@@ -35,10 +35,11 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
     console.log('hubo un cambio en auth')
     if (user) {
-        // const uid = user.uid;
-       // userValidation(true, user.email)
+        const uid = user.uid;
+        console.log(uid)
+       userValidation(true, user.email)
     } else {
-       // userValidation(false)
+       userValidation(false)
     }
 });
 

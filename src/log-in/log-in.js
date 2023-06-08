@@ -8,6 +8,7 @@ async function logIn() {
     const email = document.getElementById('email-input').value
     const password = document.getElementById('password-input').value
 
+    
     const userLogged = await logInUser(email, password)
     console.log(userLogged.status)
     if (userLogged.status) {

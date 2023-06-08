@@ -16,6 +16,7 @@ export default defineConfig({
         "product-detail": resolve(root, 'product-detail', 'index.html'),
         "log-in": resolve(root, 'log-in', 'index.html'),
         "sign-in": resolve(root, 'sign-in', 'index.html'),
+        "create-product": resolve(root, 'create-product', 'adminForm.html')
       }
     },
     target: 'esnext'
