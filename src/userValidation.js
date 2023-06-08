@@ -10,7 +10,7 @@ export function userValidation(userIsLoggedIn, user = '') {
         if (!isHome && !isLogin && !isSingUp){
             window.location.replace('/log-in/')
         }
-        
+
         if(header) {
             header.setAttribute('logged', false)
         }
@@ -22,7 +22,11 @@ export function userValidation(userIsLoggedIn, user = '') {
         if(header) {
             header.setAttribute('logged', true);
             header.setAttribute('image', user.imageURL);
-            header.setAttribute('admin', user.isAdmin);
+            if(user.isAdmin === true) {
+                header.setAttribute('admin', user.isAdmin);
+            }
+
+            
         }
     }
 }

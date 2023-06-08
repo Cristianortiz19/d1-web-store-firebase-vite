@@ -54,22 +54,12 @@ export async function getUser(a) {
     });
 }
 
-
-export async function addProduct(product) {
+export async function addProduct(productObj, id) {
     try {
-        const docRef = await addDoc(collection(db, "products"), product);
-
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-}
-
-export async function addProductWithId(product, id, file) {
-    try {
-        const imageUrl = await uploadFile(file.name, file, 'products');
-
-        await setDoc(doc(db, "products", id), {...product, url: imageUrl });
+        const imageUrl = await uploadFile(productObj.file.name, productObj.file, 'products');
+        
+        await setDoc(doc(db, "products", id), {name: productObj.name, url: imageUrl, description: productObj.description, price: productObj.price, category: productObj.category, brand: productObj.brand, size: productObj.size, date: productObj.date});
+        console.log('producto publicado!')
     } catch (e) {
         console.error("Error adding document: ", e);
     }

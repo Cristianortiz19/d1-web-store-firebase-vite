@@ -50,11 +50,15 @@
   
   /* Specific Styles */
   
-  #category {
+  .category {
     width: 100%;
   }
+
+  #publish-product {
+    display: none;
+  }
   
-  #unit {
+  .unit {
     width: 50%;
   }
   

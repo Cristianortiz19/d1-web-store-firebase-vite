@@ -18,23 +18,23 @@
       <h1 class="title"> Agrega Productos</h1>
       <fieldset>
         <legend>Nombre:</legend>
-        <input type="text" required />
+        <input type="text" id="name-input" required/>
       </fieldset>
       <fieldset>
         <legend>Imágen:</legend>
-        <input type="file" accept="image/*" name="picture" id="product-image">
+        <input type="file" accept="image/*" name="picture" id="product-image-input">
       </fieldset>
       <fieldset>
         <legend>Descripción:</legend>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea name="" id="description-input" cols="30" rows="10"></textarea>
       </fieldset>
       <fieldset>
         <legend>Precio:</legend>
-        $ <input type="number" required />
+        $ <input type="number" id="price-input" required />
       </fieldset>
       <fieldset>
         <legend>Categoría:</legend>
-        <select name="" id="category" required>
+        <select name="" class="category" id="category-input" required>
           <option value="caldos_sopas_bases">Caldos, Sopas y Bases</option>
           <option value="arepas">Arepas</option>
           <option value="carnes">Carnes</option>
@@ -55,12 +55,12 @@
       </fieldset>
       <fieldset>
         <legend>Marca:</legend>
-        <input type="text" required />
+        <input type="text" id="brand-input" required />
       </fieldset>
       <fieldset>
         <legend>Tamaño:</legend>
         <input type="number" required />
-        <select name="" id="unit" required>
+        <select name="" class="unit" id="size-input" required>
           <option value="kg">kg</option>
           <option value="gr">g</option>
           <option value="mg">mg</option>
@@ -78,5 +78,6 @@
       <button id="button-product-form">Publicar</button>
     </div>
     <script type="module" src="../importWebComponents.js"></script>
+    <script type="module" src="./create-product.js"></script>
   </body>
 </html>

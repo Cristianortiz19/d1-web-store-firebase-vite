@@ -70,7 +70,12 @@ header ul li a:hover {
 }
 
 #publish-product {
-  display: none;
+  background-color: white;
+  color: #D70021;
+  margin-right: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 8px 30px;
 }
 
 main {

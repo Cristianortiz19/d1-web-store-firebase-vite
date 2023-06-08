@@ -4,6 +4,7 @@ class HeaderComponent extends HTMLElement {
 
     constructor() {
         super();
+        this.admin = false;
     }
 
     connectedCallback() {
@@ -29,6 +30,12 @@ class HeaderComponent extends HTMLElement {
             userImage = 'src="sources/usericon.svg" id="shopping-cart"'
         }
 
+        let buttonAdmin = ' ';
+
+        if(this.admin === 'true') {
+          buttonAdmin = '<button id="publish-product">Publicar producto</button>'
+        }
+
         this.innerHTML = `
         <header class="fixed-top" id="header-desktop">
         <a href="#">
@@ -43,15 +50,15 @@ class HeaderComponent extends HTMLElement {
           <li><a href="">Promos</a></li>
         </ul>
         <div>
-          <button id="publish-product">Publicar producto</button>
+        ${buttonAdmin}
           <a href=""
           ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
         /></a>
-        <a href=""
+        <a href="/log-in/"
           ><img src="sources/exiticon.svg" alt="" id="logout-button"
         /></a>
 
-        <a href="/log-in/"
+        <a href="#"
           ><img ${userImage} id="profile-image"/></a>
         </div>
         
@@ -78,13 +85,16 @@ class HeaderComponent extends HTMLElement {
         const buttonLogout = this.querySelector('#logout-button');
         buttonLogout.addEventListener('click', () => this.handleButton())
 
-        const buttonPublishProduct = this.querySelector('#publish-product');
-        buttonPublishProduct.addEventListener('click', () => this.publishProduct())
+        if(this.admin === 'true') {
+          const buttonPublishProduct = this.querySelector('#publish-product');
+          buttonPublishProduct.addEventListener('click', () => this.publishProduct())
+          console.log('eres administrador')
+        }
+        
     }
 
     handleButton() {
         logOut();
-        window.location.replace('/log-in/')
     }
 
     publishProduct() {
