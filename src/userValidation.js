@@ -14,5 +14,6 @@ export function userValidation(userIsLoggedIn, email = '') {
         if (isSingUp || isLogin) {
             window.location.replace('/')
         }
+        alert('Estás logeado')
     }
 }
