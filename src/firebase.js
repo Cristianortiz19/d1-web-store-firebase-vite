@@ -84,10 +84,10 @@ export async function createUser(userData) {
 
         // Signed in
         const user = userCredential.user;
-        console.log(user);
 
-        const imageURL = await uploadFile(userData.picture.name, userData.picture, 'users')
+        const imageURL = await uploadFile(userData.imageFile.name, userData.imageFile, 'users')
 
+            console.log(imageURL)
         /// crear registro en BD
         await addUserToDB({email: userData.email, username: userData.username, image: imageURL},user.uid);
 

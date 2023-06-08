@@ -16,7 +16,7 @@ async function signUp(e) {
         email: email,
         username: username,
         birthday: birthday,
-        image: picture,
+        imageFile: picture,
         password: password
     }
     console.log(userData);
@@ -24,7 +24,6 @@ async function signUp(e) {
 
     if (password === confirmPassword) {
         const userCreated = await createUser(userData)
-        console.log('yey')
         if (userCreated.status) {
             alert('usuario creado con exito, uid: ' + userCreated.info)
         } else {
