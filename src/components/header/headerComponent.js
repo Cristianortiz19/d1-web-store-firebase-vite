@@ -1,4 +1,5 @@
 class Header extends HTMLElement {
+
     constructor() {
         super();
     }
@@ -8,7 +9,7 @@ class Header extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['userEmail', 'isLogged']
+        return ['image', 'logged']
     }
 
     attributeChangedCallback(propName, oldValue, newValue) {
@@ -17,6 +18,15 @@ class Header extends HTMLElement {
     }
 
     render(){
+        
+        let userImage = "";
+
+        if(this.logged) {
+            userImage = 'src="' + this.image + '"';
+        } else {
+            userImage = 'src="sources/usericon.svg" id="shopping-cart'
+        }
+
         this.innerHTML = `
         <header class="fixed-top" id="header-desktop">
         <a href="#">
@@ -35,6 +45,8 @@ class Header extends HTMLElement {
           <a href=""
           ><img src="sources/shopping-cart.svg" alt="" id="shopping-cart"
         /></a>
+        <a href="/log-in/"
+          ><img ${userImage}/></a>
         </div>
         
       </header>
@@ -61,4 +73,4 @@ class Header extends HTMLElement {
 }
 
 customElements.define('header-component', Header);
-export default HeaderComponent;
+export default Header;

@@ -37,23 +37,24 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid;
         console.log(uid)
-       userValidation(true, user.email)
+       userValidation(true, getUser(user));
     } else {
        userValidation(false)
     }
 });
 
-export async function getProdcuts() {
-    const allProducts = [];
+export async function getUser(user) {
 
-    const querySnapshot = await getDocs(collection(db, "products"));
+
+    const querySnapshot = await getDocs(collection(db,"users"));
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-        allProducts.push({...doc.data(), id: doc.id });
+        if(user.email === doc.data().email){
+            console.log(doc.data());
+            return doc.data();
+        }
     });
-
-    return allProducts;
 }
+
 
 export async function addProduct(product) {
     try {
