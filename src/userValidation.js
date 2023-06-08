@@ -10,6 +10,7 @@ export function userValidation(userIsLoggedIn, user = '') {
         if (!isHome && !isLogin && !isSingUp){
             window.location.replace('/log-in/')
         }
+        
         if(header) {
             header.setAttribute('logged', false)
         }
