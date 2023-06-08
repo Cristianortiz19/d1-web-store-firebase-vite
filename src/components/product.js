@@ -81,7 +81,8 @@ function showAll(products) {
       <h3>${products[i].size}</h3>
       <h3>${products[i].brand}</h3>
       <h2>${products[i].price}</h2>
-      <a href="${detail}"><h3>Comprar</h3></a>
+      <a href="${detail}" id="buy-button"><h3>Ver Producto</h3></a>
+      <a href="#" id="add-cart-button"><h3>Añadir al Carrito</h3></a>
       <p>${products[i].category}</p>
       </d1_card>
       `;
