@@ -1,0 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Karla', sans-serif;
+}
+  
+  /* Set a base font size and line height */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .items {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  
+  .item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #D70021;;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c44357;;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
